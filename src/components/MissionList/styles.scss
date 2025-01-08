@@ -1,0 +1,128 @@
+// styles.scss
+$primary-blue: #2563eb;
+$primary-blue-dark: #1d4ed8;
+$background-gray: #f9fafb;
+$white: #ffffff;
+$border-gray: #e5e7eb;
+$text-gray: #6b7280;
+$text-dark: #374151;
+$text-darker: #111827;
+$error-bg: #fee2e2;
+$error-text: #dc2626;
+$status-bg: #ecfeff;
+$status-text: #155e75;
+
+.app {
+  min-height: 100vh;
+  background-color: $background-gray;
+  padding: 1rem;
+
+  &__container {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+}
+
+.search {
+  &__container {
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid $border-gray;
+    outline: none;
+    transition: all 0.2s;
+
+    &:focus {
+      border-color: $primary-blue;
+      box-shadow: 0 0 0 2px rgba($primary-blue, 0.2);
+    }
+  }
+}
+
+.missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mission-card {
+  background-color: $white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $text-darker;
+  }
+
+  &__status {
+    background-color: $status-bg;
+    color: $status-text;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+
+    &--failed {
+      background-color: $error-bg;
+      color: $error-text;
+    }
+  }
+
+  &__button {
+    background-color: $primary-blue;
+    color: $white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $primary-blue-dark;
+    }
+  }
+
+  &__details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $border-gray;
+  }
+
+  &__meta {
+    color: $text-gray;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    color: $text-dark;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+}
+
+.loader,
+.end-message {
+  text-align: center;
+  padding: 1rem;
+  color: $text-gray;
+}
